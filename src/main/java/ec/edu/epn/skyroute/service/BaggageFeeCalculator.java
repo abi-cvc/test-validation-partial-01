@@ -43,6 +43,10 @@ public class BaggageFeeCalculator {
             throw new IllegalArgumentException("El peso de la maleta debe ser mayor que 0");
         }
 
+        if (bagCount < 1) {
+            throw new IllegalArgumentException("La cantidad de maletas debe ser al menos 1");
+        }
+
         return 0.0;
     }
 }

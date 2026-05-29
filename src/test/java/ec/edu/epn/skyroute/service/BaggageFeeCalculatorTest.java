@@ -36,4 +36,11 @@ public class BaggageFeeCalculatorTest {
         assertThatIllegalArgumentException()
             .isThrownBy(() -> calculator.calculateFee(negativeWeight, 1, 1L));
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0, -1, -10})
+    void shouldThrow_whenBagCountIsLessThanOne(int invalidCount) {
+        assertThatIllegalArgumentException()
+            .isThrownBy(() -> calculator.calculateFee(20.0, invalidCount, 1L));
+    }
 }
