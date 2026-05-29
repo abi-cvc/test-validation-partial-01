@@ -38,6 +38,11 @@ public class BaggageFeeCalculator {
         if (passengerId == null) {
             throw new IllegalArgumentException("El ID del pasajero no puede ser nulo");
         }
+
+        if (weight <= 0) {
+            throw new IllegalArgumentException("El peso de la maleta debe ser mayor que 0");
+        }
+
         return 0.0;
     }
 }
