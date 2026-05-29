@@ -47,6 +47,8 @@ public class BaggageFeeCalculator {
             throw new IllegalArgumentException("La cantidad de maletas debe ser al menos 1");
         }
 
-        return 0.0;
+        double feePerBag = 30.0;
+
+        return feePerBag * bagCount;
     }
 }
